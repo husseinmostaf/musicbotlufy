@@ -20,7 +20,7 @@ const gif = require("gif-search");
 
 const client = new Discord.Client({disableEveryone: true});
 
-const prefix = "1";
+const prefix = "+";
 var adminprefix = '1'
 /////////////////////////
 ////////////////////////
@@ -330,8 +330,23 @@ client.on('message', message => {
       message.channel.send(helpEmbed);
     }
 });
+const Discord = require("discord.js");
+const client = new Discord.Client();
+var prefix = "+";
+client.on('ready', () => {
+   console.log(`----------------`);
+      console.log(`Cyhper Bot Script By : Lufy`);
+        console.log(`----------------`);
+      console.log(`ON ${client.guilds.size} Servers '     Script By : Luffy ' `);
+    console.log(`----------------`);
+  console.log(`Logged in as ${client.user.tag}!`);
+client.user.setGame(`+help | LuffyBOT`,"http://twitch.tv/HELP")
+client.user.setStatus("dnd")
+});
 
-const developers = ["472413769700474901","id"]
+client.login(process.env.BOT_TOKEN);// لا تغير فيها شيء
+
+const developers = ["333952411901231106","id"]
 client.on('message', message => {
     var argresult = message.content.split(` `).slice(1).join(' ');
       if (!developers.includes(message.author.id)) return;
